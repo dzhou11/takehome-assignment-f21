@@ -1,8 +1,15 @@
 <template>
   <div>
     <!-- PART 1: Pass in a "complete" prop here -->
-    <Instructions />
+    <Instructions
+    complete="hi"/>
     <!-- PART 4: Modify the Show component to accept all of these props -->
+    <form action="/shows">
+        <label for="name">New show name(not working):</label>
+        <input type="text" id="name" name="name">
+        <input type="submit" href="/shows">
+    </form>
+
     <Show
       v-for="show in shows"
       :key="show.id"
@@ -16,6 +23,7 @@
 <script>
 import Instructions from "./Instructions.vue";
 import Show from "./Show.vue";
+ 
 
 export default {
   components: {
